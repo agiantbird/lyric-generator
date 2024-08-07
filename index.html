@@ -1,0 +1,2516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.js"></script>
+
+    <!-- RiTa library: -->
+    <script src="https://unpkg.com/rita@2.8.31/dist/rita.js"></script>
+
+    <title>Rich Hoyt Song Generator</title>
+
+    <style type="text/css">
+        body {
+            background-color:#334433;
+        }
+        main {
+            width: 100%;
+            display: none;
+        }
+        canvas {
+            display: none;
+            margin: 0 auto;
+        }
+        #source {
+            display: none;
+        }
+        #letter{
+            width:600px;
+            padding:2em;
+            background-color:#ccc;
+            margin-top:2em;
+            margin-left:2em;
+        }
+        p {
+            padding: 0.001em;
+            margin: 0.25em;
+            margin-top: 0.5em;
+        }
+        button {
+            font-size: 15px;
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            color: rgba(255, 255, 255, 0.96);
+            background: #658665;
+        }
+
+        button:hover {
+            background: #334433;
+        }
+    </style>
+
+</head>
+<body>
+<div id="letter">
+</div>
+<div id="source" style="display:none">
+    Two cloves garlic finely minced
+    I am not all that convinced
+    that you ever loved me
+    that I ever really let you
+    chili powder, MSG
+    are you god damn kidding me
+    this isn’t getting better
+    this won’t do
+    Some salt and pepper, more to taste
+    what a shame what waste
+    spent time and energy
+    nothing gained
+    Potatoes, spinach, navy beans
+    how loud can I scream
+    before anybody checks on me?
+    A sour taste and rotten luck
+    what the hell how the fuck
+    can I hold this together
+    what can I do?
+    what can I do?
+    what will I do?
+    Hello friend it’s me again
+    you just popped into my head
+    do I pop into your head?
+    hello friend it’s me again
+    they tell me you’re drinking again
+    seems like a good time for it
+    can’t blame you too much for it
+    hello friend it’s me again
+    you just popped into my head
+    hello friend I’m in my head
+    I’ve been drinking some again
+    can you blame me much for it?
+    Do you get stuck in your head?
+    hello friend it’s me again
+    Hello there it’s me your friend
+    heard you cut your hair again
+    I think that’s good now and then
+    change as good as vacation
+    I don’t cut my hair often
+    might just take a vacation
+    hello friend its me again
+    might get out to the Hudson
+    head out to the water's edge
+    and walk until I am drinking
+    every breath that’s coming in
+    friend I’m in over my head
+    Do you get in over your head?
+    hello friend it’s me again
+    I heard birds chirping in blues, yellows and greens
+    I felt the heat breathe in through the window
+    Barely 9 a.m. in Andalusia
+    Dead of night back where you are
+    I wrote you a letter I won’t be sending
+    I have a song that I won't sing
+    We lead the horse away from the water
+    Right when it was about to drink
+    I dress lightly in bright colors
+    As the heat index climbed
+    You were stirring from your slumber
+    In another place and time
+    I have a memory that’s fast fading
+    I have a thought that I won’t speak
+    We lead the horse away from water
+    Just as it was gonna drink
+    I broke down on my way to New Jersey then so did my car
+    I pulled over the shoulder wondered how I got so far
+    from the commonwealth of Massachusetts
+    and its black capped chickadee?
+    The state bird of Jersey’s a goldfinch
+    and that means nothing to me
+    I broke down on my way to New Jersey
+    then so did my car
+    I broke into death’s house to visit you
+    Broke his window with a heavy photo album I’d been lugging around
+    We ate his groceries
+    jumped on his bed
+    threw on his robes and we cried out loud:
+    Merry Christmas,
+    Merry Christmas,
+    and Happy New Year
+    'Forever' is a word that should have more letters
+    'Final' could be longer, too
+    Stupid thoughts I guess,
+    I thought I’d be less of a mess
+    I just miss walking toward you
+    And all I’ve seemed able to figure out
+    is that life is a thing that happens
+    How long does it take modern dates to feel old?
+    'Oh, ages', you said, as you spun on your toes
+    How long to write lines no one already knows?
+    'Oh, ages', you said, as you spun on your toes
+    Don't measure time
+    by how a body sways
+    I measure time by how a body grows
+    Don't measure time
+    by how a body sways
+    I measure time by how a body breaks down
+    My body's breaking down
+    The prison siren signaled your barbed wire mood
+    so I came at you as soft as I could
+    I stole flowers from cacti
+    apologized for old crimes
+    I left you offerings
+    I let you be
+    You said 'I know what you're doing,
+    it won't work on me',
+    but in between your words, I saw it flashing:
+    a yellow bird between your teeth
+    Zen sword karate dojo vaulting on my left
+    gas station across the street
+    where there’s gasoline
+    where the cigarettes sleep
+    Flash of lights and I wonder how often
+    the cop that turns them on and off an on and
+    how often they look up
+    for delinquents, or maybe for angels
+    I’m not supposed to have
+    this roof access
+    my landlord put a lock on the door
+    but I cracked it
+    From up here I can see my city
+    while I think about
+    how to hide from it
+    while I think about
+    how I’m part of it
+    up here on the roof
+    Slammed my head on an Escher-angled cabinet
+    heard your laughter take flight right away
+    saw your hands held up in an apologetic front
+    as I rubbed the once-soft spot above my brain
+    And I remembered that I love you
+    not that I ever forgot
+    but the days stretch long and the nights yawn wide
+    and it’s nice to be gripped by that soft, wild thought
+    It must be summer ‘cause the ants have come
+    with their strange, machine movements
+    and their familiar, blind search for something sweet
+    I hate them
+    and we hate this heat and we hate
+    that we love each other, we love each other
+    more than we’ll admit
+    we climb in bed and wait for shade
+    It’ll be a while before we get it
+    More ice,
+    more ice,
+    more ice
+    Be nice
+    My mom’s the latest in a great
+    sword-swallowing tradition
+    she slides the sharp things into her gut
+    My father is a fire-breather
+    he’s all violent burst and flash and heat
+    everything he does, he overdoes
+    And I’m all sad clown tumbles
+    as I try to distract and divert us
+    ladies and gentlemen,
+    isn't this a fine circus?
+    This was a hard year
+    I didn’t tell anyone
+    I didn’t tell my friends
+    I didn’t want to bother them
+    I took
+    a multivitamin
+    I sucked air into my lungs
+    I combed my hair
+    I bit my tongue
+    Your song floats from the kitchen
+    some strange new melody
+    toast on the breakfast table
+    topped with golden drops of medlar jelly
+    And the breakfast and the kitchen and your voice
+    and the breathing heat of day
+    and the toast and the song and the table
+    and the one thing out of place
+    and the one thing out of place
+    I don’t remember buying medlar jelly
+    I don’t remember planting medlar trees
+    These things have to rot before ripening
+    just what are you trying to tell me?
+    What are you trying to tell me?
+    That night is darkest before the dawn?
+    That bodies float after they drown?
+    That what doesn’t kill you makes you strong?
+    That what must go up must come down?
+    I’ve never been good at visual art
+    but here you go, I drew you a heart
+    It’s got our names on the inside
+    It don’t look great, at least I tried
+    At least I’m trying
+    at least I’m trying
+    To show that you are
+    the ‘is’ in my sentence
+    and my minute’s second hand
+    With all of my being and seeming
+    I love you more than
+    I understand
+    I love you more than
+    you understand
+    So here you go, I drew you a heart
+    I’m not too great at visual art
+    It’s got our names on the inside
+    Looks like an egg, at last I tried
+    When the knife man came
+    with his special knife sharpening apparatus
+    we let him on in
+    there was nothing else for it
+    there was nothing else for it
+    When the knife man came
+    with his crisp black jacket
+    and strapping good looks
+    you smiled like a saint,
+    I smiled like a crook
+    and while he sorted out our cutlery
+    we drew shades and we locked the doors
+    You gave me a look like you were thinking
+    I don't think too much anymore
+    and when he asked how our knives get so dull
+    a window flew open
+    Saw you sitting on a porch in Allston
+    while the sun was setting on Boston
+    your shirt was off
+    your hat was on
+    You seemed so happy
+    you seemed so sad
+    well me too,
+    brother, me too
+    And hornets take nectar
+    but they don't make honey
+    we drink Narragansett
+    with Del's lemonade
+    We smoke and sip sweet and sour
+    as wasps find sleep in flowers,
+    or in the eaves of the old porch
+    and the fire escape
+    Forgive me father
+    forgive me mother too
+    goodbye my god
+    hello to you,
+    something newly wakened
+    gaining strength,
+    already strong
+    willing to go where I won't,
+    do what I don't
+    a mad barking dog
+    And I apologize to everyone
+    but I am not sorry
+    for breaking loose and
+    hopping fence and running far
+    from me, the me you thought
+    I was, that just ain't me
+    that just ain't me
+    A Lasko, ceramic, electric heating fan
+    humming in the corner steady, true
+    if this fan can create artificial warmth,
+    baby, maybe I can fake it too
+    I hold you close
+    I turn up the heat
+    I tried hard to remember you
+    it was like trying to hold water in my hand's loose palm
+    it was like trying to remember the fireworks of autumn
+    it was a silly thing to do
+    it's hard to recall things like soft and warm
+    but I tried to remember you anyway
+    you came into the shop the other day and
+    I was way off
+    you came into the shop
+    I was way off
+    Broke into a flock of yourself
+    jackets like banners in the wind
+    laughter like the beat of birds wings
+    like your hair curling
+    and the wind hurt my eyes
+    I am crying
+    I am laughing
+    I am laughing and I feel good
+    We were painting over everything
+    white wash, new beginnings
+    we're allergic to symbols and meaning
+    we were left scratching our arms
+    It's headache season
+    right on time
+    It's headache season
+    and the weather's fine
+    Sweep the whispers from the corners
+    leave the outlets in the walls
+    turn the radio up loud
+    catch the rise and fall
+    of songs with no commercial potential
+    as we say goodbye
+    It's leaving season
+    right on time
+    it's leaving season
+    and the weather's fine
+    Two years in a place and you grow a certain way
+    two years packed up in the back of a truck
+    two years in a place and you grow to fit its shape
+    you're heading south, things are looking up
+    And I think I'll miss you
+    but I don't think I'll call
+    wish you good luck
+    hope you won't need it at all
+    It’s been a bad year weather-wise
+    and in every other way
+    I checked out the forecast
+    for the next five days
+    It said rain is so likely
+    that it’s outright guaranteed
+    you can’t spin gold from straw
+    or hope from certainty
+    Try to stay dry
+    try to not drown
+    hold out for the 10-day
+    do what you can for now
+    If there's a heaven
+    and they’re kind and dumb enough to let me in
+    I hope it's got an elevator
+    Something vague and wonderful at the end
+    that you know you'll get to
+    sooner or later
+    And you lean against the railing and think
+    about nothing in particular
+    Maybe kissing
+    maybe fireworks
+    probably kissing
+    And as the numbers count up
+    you fall in love with the idea
+    of arrival
+    We learned to smile by hiding
+    knives inside our teeth
+    kept our arms at our sides
+    with daggers up our sleeves
+    the day has finally come
+    we've long since reckoned
+    The devil's in the details
+    we are detail-oriented
+    And I don't love anyone but you
+    And I don't trust anyone
+    And I don't love anyone but you
+    And I don't trust anyone
+    What am I gonna do?
+    What am I gonna do
+    with you?
+    Will I pick you up?
+    Will I take you home?
+    What am I gonna do?
+    What am I gonna do
+    with you?
+    Will I say goodbye?
+    Will I let you go?
+    I woke up
+    had my breakfast of
+    multivitamins and
+    anti-inflammatories
+    wondered what the day had
+    in store for me
+    What inevitable 'uh ohs' of cartoon physics
+    would visit upon me
+    as I give chase
+    to the one thing that matters to me
+    An anvil might drop on my head
+    I might get hit with a baby grand
+    come through the top,
+    cracked smile of ivory keys
+    as I give chase
+    to the one thing that matters to me
+    I've got a brain full of gunpowder
+    a heart full of TNT
+    and a detonator held by
+    the one person
+    who matters to me
+    The following is a list of actual last words which I invented:
+    "Watch this!"
+    "See you tomorrow."
+    "I can too juggle that!"
+    "Yes."
+    "Grande iced coffee."
+    "Nurse!"
+    "I've got a good feeling about this."
+    "Hello?"
+    "Where are all my damn socks?"
+    "What the hell is that?"
+    "What? Am I gonna die or something?"
+    "Is today or Tuesday or Wednesday– oh, it's Wednesday."
+    "Relax, it's not loaded."
+    "Red on yellow. . . is a friendly fellow!"
+    "Ah, shit!"
+    "No, no, no, no, no, no, no, no!"
+    "What was I doing?"
+    "I'll be fine."
+    "Okay, let's try it without the harness."
+    "Huh, it's never made that noise before."
+    "I don't know."
+    "Yes, I'll hold."
+    "I think it's safe now."
+    "What am I doing with my life?"
+    "Good."
+    "Just two more days."
+    "You can go fuck yourself!"
+    "Thank you."
+    "Goodbye."
+    Red wine stains on my cigarette filters
+    what am I doing with my body?
+    what am I doing with anybody?
+    I'm an agent of harm
+    I'm a vulnerable target
+    I flash red warnings
+    I hope you'll ignore it
+    I'm the worst kind of worst kind of misery
+    and I need company
+    and I'd love company
+    We can get better tomorrow
+    we can get better somehow
+    we'll steal medicine and
+    even take the right amount
+    tomorrow
+    I was not built for this word,
+    I need to sleep in branches,
+    to hide in your hair
+    Winter is coming, winter is wild
+    let us disconnect from the ground
+    dwell here, do well here
+    hang streamers from the walls
+    Between fall and winter
+    we'll have our own season to rejoice
+    I will not build you a temple, no,
+    if given a choice
+    I'll build you a cabin
+    I'll build you a shack
+    I'll tear it down in time
+    next autumn I'll be back
+    I love you so, I love you so, I love you so,
+    crisp red, orange, yellow, then you go
+    We let the evening slide
+    I left and it was cold outside
+    all that moved was in migration
+    or in states of hibernation
+    Where will you go when the world turns cold?
+    Where will you go when the world turns cold?
+    We said goodbye
+    I left and it was cold outside
+    We were the seed
+    that became the sapling
+    that became the need
+    that was fed by the waters
+    that bore limbs that grew
+    leaves that feasted on sunlight
+    and breathed in reverse
+    rested birds between their flights
+    Our love grows
+    for one another
+    we are branched growth
+    and patient wonder
+    As children we worshipped home
+    wild and reckless
+    armed with markers and felt-tips
+    we scribbled manic hieroglyphs on the walls
+    relished the soft flow of our graffiti
+    drew hearts and stars and plants
+    and cars and bugs and mom and glory
+    Like a Norman Rockwell b-side
+    we climbed each other’s shoulders
+    stole cookies from Folgers jars
+    turned our home into a den of thieves
+    ran away, height a combined wobble
+    chirping nervous like church mice
+    a tower of crumb flecked babble
+    And for a while it was Eden
+    our mother charming snakes from her clothes
+    dad drinking aluminum
+    taking in her sun dress flow
+    And for a while it was Eden
+    mom charming snakes from tomatoes
+    dad drinking aluminum
+    garden letting go the evening’s glow
+    We grew to adolescents
+    tore down the stairs
+    like eager young heretics
+    skipped the last steps to get out the door
+    and curfews surfaced on the skin of our home
+    I hate this house we shouted out
+    seeing red and feeling purple
+    Then came the exodus
+    to work, to school,
+    across state lines, and overseas
+    Home became a photo album thing
+    a collection of memories
+    of our child bodies
+    of half-remembered parties and when mom was pretty
+    Mom’s still
+    pretty
+    Mom's still
+    pretty
+    And for a while it was Eden
+    our mother charming snakes from her clothes
+    dad drinking aluminum
+    taking in her sun dress flow
+    And for a while it was Eden
+    our mother chasing snakes from tomatoes
+    dad drinking aluminum
+    garden letting go the evening’s glow
+    We meant to return home
+    distance made us nostalgic
+    but we were soon distracted
+    by our fine-featured friends and their new ideas
+    so adult and exciting with their complications
+    And their slip-shod temple bedrooms
+    housing subleased veneration
+    Glory, glory, glory
+    But a house and a home
+    are not one in the same
+    one is a structure
+    and one is a name
+    you give to the comfort
+    that keeps you warm and sane
+    worth worship and return
+    again and again
+    oh Home, Home, Home
+    hallowed be the name
+    for a while at least
+    but worshipers grow weary
+    and days are just so long
+    And for a while it was Eden
+    then we let the weeds grow
+    we let the shingles slide
+    we let things go
+    But there will come that night
+    when you wake to a room full of blue
+    with that old house calling you
+    you’ll drive back, climb through the window
+    lie on the floor, fingers like threshers in the carpet
+    eyes shut then open, and you'll say it:
+    I lived here
+    I lived here
+    I lived
+    When there was no doing left to do
+    No making to make
+    we curled up like dogs
+    Warmth, I felt it
+    warmth
+    And a smile broke at your lips
+    you were dreaming in your sleep
+    something soft and sweet
+    Warmth, I felt it
+    warmth, I felt it
+    warmth
+    I'm all for letting my
+    dumb, animal body
+    love what it loves
+    But I won't let my
+    dumb, animal body
+    hurt what it hurts
+    I want to be wild
+    don't want to be reckless
+    I don't have to be good
+    but I'd like you and I
+    to want to be
+    no matter how lonely
+    no matter how lonely
+    no matter how lonely
+    I want to be good
+    We went to the party supply store
+    which no one really goes to anymore
+    it didn’t feel much like a party inside
+    Got what we came for
+    found it there on the sales floor
+    deep dark interior, all rainbow outside
+    Took it home  and put it up on the table
+    filled it up as best as we were able
+    as much as the paper mâché could hold
+    Poured in licorice and jelly beans
+    sweet tarts, broke hearts, our car keys
+    addresses from places no longer home
+    change in our pockets and our ids
+    credit cards, lighters, and tv screens
+    people we’ve been meaning to call and those we won’t
+    Toss them in
+    watch them go
+    Toss them in
+    watch them go
+    Throw in the pets you’ve loved
+    and those you’ve failed
+    your medical records, your junk mail
+    the monster under your bed and god
+    For this to work you should get in too
+    amongst the candy, god, and things you’ve lived through
+    but then there’d be no one to raise it up
+    So just picture yourself in the padded dark
+    inside a donkey shape, hanging in stark
+    contrast to the sky’s expanse of blue
+    When you’re ready grab the branch you selected
+    weeks ago for this, and calm, and collected,
+    and eager as Christmas morning and wack like hell
+    Eyes open or closed, screaming, laughing or crying
+    just keep swinging, as everything goes flying
+    just keep swinging, just keep holding on
+    And when it all breaks open and the world spills out
+    let yourself dive down to start
+    the hand-over-fist, manic scramble to take it all back again,
+    take it all back again
+    The champagne bottle popped
+    in my chest
+    gasping trout flowed from the neck
+    I could hear machines
+    my father’s slurred histories
+    and I waltzed
+    with my dad's memory
+    and his tendencies
+    Someone must stay awake to plant each stem pulled
+    someone must stay awake to keep the clock honest
+    someone must stay awake to let the cold in from the cold
+    someone must stay awake to watch it all go on
+    Someone must stay awake to keep the lamp company
+    someone must stay awake through the night
+    someone must stay awake to see each nesting bird slowly
+    wake and startle itself with flight
+    wake, startle, surprise itself with flight
+    We were all pizza grease and smiling teeth
+    as we piled in our fall-apart cars
+    sun bleeding like God’s open throat
+    all over Cape Cod
+    I caught your eyes in the rear-view mirror
+    quickly looked away
+    didn’t know what we were doing
+    still don’t to this day
+    But we’re still trying
+    still driving
+    still aiming at something better
+    aiming away from something worse
+    As sharks beach themselves on sandbars
+    and our car speeds past the rest
+    we shout for joy or just to make noise
+    and then we gasp for breath
+    and then we gasp for breath
+    I got older, I got dumber
+    I got colder what a bummer
+    I don’t talk to my friends
+    If I don’t talk to them,
+    are they even my friends?
+    I got strung out too many times
+    I got hung out to dry
+    now I lie down most evenings
+    now I don’t even try
+    I mean, why would I?
+    What a bummer
+    I don’t think I’m growing
+    I don’t think I’m having fun
+    I might die of old age young
+    Every night I dream of falling asleep
+    and every morning I wake up tired
+    and it’s all I can do to keep
+    to keep up with the upkeep I require
+    And you're trying to talk to me
+    and you want to know what I think
+    you want to know how I feel
+    you want so many things
+    I’ve got some side effects
+    I’ve got some small defects
+    and something more complex
+    I think I need some rest, but
+    Every night I dream of falling asleep
+    and every morning I wake up tired
+    and it’s all I can do to keep
+    to keep up with the upkeep I require
+    Don't think I'll ever be great
+    oh great, ah shit
+    and I am learning
+    to be okay with it
+    wouldn't that be great?
+    ah shit
+    if I could learn to be okay?
+    wouldn't that be great?
+    Don't think I have a good mind
+    I don't mind, but still,
+    I don't think it's organized or thinks well
+    I don't know what to think
+    Oh well, ah hell
+    I don't know what to think
+    Don't think I'll ever be great
+    oh great, ah shit
+    and I am learning
+    to be okay with it
+    wouldn't that be great?
+    ah shit
+    to learn to be okay?
+    to learn to be okay?
+    Today I am not myself
+    I think out loud
+    I think out loud
+    Then I think about
+    who is thinking about
+    who is thinking
+    It’s a miracle I’ve
+    managed to survive
+    It’s a miracle I haven’t
+    lost my mind
+    I’ve been everywhere I go
+    but nothing stays it all goes
+    I’ve been everywhere I go
+    I can’t remember; I don’t know
+    The sun had sharpened itself against winter
+    and sent headache light through the windshield and sent me wincing
+    and with a head full of sunlight I tell myself things will get better
+    but it’s a half-hearted argument and I’m slowly convincing myself
+    To give up
+    to pull over
+    to throw up
+    my hands
+    and the contents
+    of my stomach
+    again and again
+    but I’ll keep driving
+    a little while
+    and hope that little while builds
+    some momentum,
+    If I can just get some momentum,
+    I’ll be alright
+    Let’s live in billboards
+    let’s breathe neon and dust
+    let’s eat plastic
+    let’s stop trying to adjust
+    To the new times times new roman size 78 point fonts
+    screaming that everything is fucked
+    Come on baby let’s give up
+    let’s lean in hard
+    let’s give up
+    You smell like perfume and kerosene
+    what have you done?
+    what will you do next?
+    can I come along?
+    I don’t want to aid you
+    don’t want to abet
+    I just don’t want to you to do
+    something you might regret
+    So I’ll be the lookout
+    drive the getaway car
+    keep you distracted from yourself
+    and away from harm
+    You smell like perfume and kerosene
+    what have you done?
+    It's been Saturday night all morning
+    it's been raining, you're complaining
+    about your head
+    We tied one on last night
+    then we tied one on again and again
+    We drank like fish
+    we sank like stones
+    tried to drown our sorrow
+    tried our best to stay afloat
+    Ten minutes in the shower, I've lost hours
+    trying to fight what's coming up
+    and something's fighting inside
+    and if it wins at least I did this to myself
+    My head under water
+    a clicking in my bones
+    try to drown your sorrow
+    try to stay afloat
+    It's been Saturday night all morning
+    it's been raining, you're complaining
+    about your head
+    I remember you best
+    in supermarkets
+    surrounded by products
+    and options in excess
+    How you moved
+    undistracted, undeterred
+    towards what you wanted
+    You wrote it all out on a list
+    went out and got it
+    I wrote your name down
+    a thousand times
+    but it won’t bring you back one bit
+    no it won’t bring you back one bit
+    I’m surrounded in this supermarket
+    I’m distracted in this supermarket
+    and I don’t need much to exist
+    only twelve items or less
+    no, I don’t need much to live
+    I am lonely in this supermarket
+    I remember
+    I remember
+    I just need to rest my eyes
+    I just need to catch my breath
+    I’ve said goodbye to so many friends
+    I have seen too many deaths
+    I’ll be fine
+    hell I’m alive
+    I must be fine
+    if I’m alive
+    I just miss you
+    I just miss you
+    I just miss you
+    I miss your eyes
+    I miss your eyes
+    I miss your breath
+    I miss your size
+    Sorry I always cry
+    I just need to catch my breath
+    I’m sorry you’re seeing me like this
+    I’m not
+    touching you
+    you said, holding your finger in front of my head
+    I’ve lost
+    touch with my friends
+    I realize holding my head in my hands
+    You call me names
+    you pull my hair
+    I don’t care, but wait a minute, shouldn’t I care?
+    I could call my friends
+    I could use their names
+    I could sit here pulling the hair from my head
+    I could call my friends
+    I could use their names
+    I pushed on your chest
+    you breathed in my lungs
+    we both did our best
+    to keep this going on
+    You took my breath away
+    I choked on your tongue
+    we both did our best
+    our best isn’t good enough
+    We push and pull
+    air stops and goes
+    blood moves and pools
+    things decompose
+    So here we stand,
+    mouth-to-mouth,
+    and hand-in-hand
+    I’m going to love you my whole life
+    and through as many resurrections as I can
+    Regardless of how severe most bleeding can be controlled
+    most times bleeding will even stop on its own
+    through intricate miracles our bodies
+    our broken bodies can make themselves whole
+    But if you’re bleeding too much you could die from shock and loss
+    so bandage the wound with cloth and gauze
+    and apply direct pressure to help form clots
+    squeeze yourself tight to help with the loss
+    Don’t bleed out
+    don’t bleed out
+    don’t bleed out
+    fight the loss
+    You’ve been in the cold too long now
+    you’re in trouble
+    bring inside now
+    your bones, your blood, and muscle
+    Drink something warm and sweet
+    and let us treat you
+    And wrap your bones in wool and blankets
+    built up like soft embankments
+    around you
+    and your blood flow
+    come in from the cold
+    come in where its warm
+    you don’t have to be alone and cold
+    Are you aware of where you are?
+    Has something gone on?
+    You seem off
+    Do you have a headache?
+    Can you concentrate?
+    Has the spinning stopped?
+    Can you just keep still?
+    Can you just slow down
+    and catch your breathing
+    back up with itself?
+    Can I see your eyes?
+    Can I hear your breath?
+    Do you want some water?
+    How’s your sense of balance?
+    Just keep talking
+    tell me anything
+    help’s on the way
+    come on stay with me
+    You learned the current-voltage characteristic of skin
+    first-hand from a faulty appliance
+    you saw nothing but heavenly white light for a moment
+    and quickly lost consciousness
+    We found you in a clumsy cruciform
+    splayed on the old floor of the kitchen
+    your heart dancing to an erratic pulse
+    wild fluttering in your eyelids
+    wild fluttering in your eyelids
+    Nobody dared touch you
+    we called for help, it came from god knows where
+    we reached our hands out over you
+    and felt a charge in the air
+    My hands feel hollow
+    there’s a twitch in right knee
+    I’m short of breath and I'm
+    pretty far from me
+    Inhale for five seconds
+    I hold for two
+    I breathe out,
+    what the hell am I going to do
+    what am I going to do
+    I need to get out
+    I need to get calm
+    I need to stop ticking down these thoughts,
+    shaking palms, time bomb
+    I need to get out
+    I need to get calm
+    shaking hands,
+    sweaty palms,
+    time bomb
+    Down here the heat can kill you
+    down here you should keep to the shade
+    down here the heat can kill you
+    hey, what did I say
+    Keep your skin covered
+    watch your heart rate
+    try to keep a cool head
+    try to keep your thoughts straight
+    Try to find cool
+    water
+    Try to find cool
+    water
+    Try to find cool
+    water
+    Try to cool down
+    Stood up too fast
+    collapsed into darkness
+    fell into dreaming
+    of far away friends
+    Woke up bruised
+    and groggy and reminded
+    I wasn't build for sudden
+    moves or sudden ends
+    Stood up too fast
+    (It's in our blood)
+    collapsed into darkness
+    fell into dreaming
+    of far away friends
+    Woke up bruised
+    (You're in my blood)
+    and groggy and reminded
+    I wasn't build for sudden
+    moves or sudden ends
+    Don't get fancy it just has to work
+    start one joint up from the break
+    use sticks for splints and padding from clothing
+    make sure blood circulates
+    This is gonna hurt
+    I can't stress it enough
+    but you'll survive
+    and get fixed up
+    the piece of you that broke
+    will grow back strong and tough
+    what doesn't kill you
+    still fucking sucks
+    Use sticks for splints tear up your clothing
+    tie things together with a shoelace
+    show up barefoot, broken, bruised but living
+    get help putting pieces back in place
+    get help putting the pieces back in place
+    This is gonna hurt
+    kid, if you only knew
+    you survived so much
+    you'll survive this too
+    and what you broke
+    will grow back strong and true
+    what doesn't kill you
+    doesn't kill you
+    I’ve got benedictions
+    I’ve got trauma dressings
+    triangular bandages,
+    healing prayers and blessings
+    I’ve got assurances
+    I’ve got duct tape
+    I’ve got some medical training
+    and a little bit of faith
+    I can’t fix you
+    I can’t make you whole
+    but I can keep you stable
+    until better hands can work some miracle
+    I’ve got vinyl gloves
+    I’ve got a field guide
+    tweezers, sterile shears,
+    hydrogen peroxide
+    I’ve got words of encouragement
+    a kind lie or two
+    it’s not so bad you know
+    nothing you won't make it through
+    nothing you won't make it through
+    And I can’t fix you,
+    I can’t work miracles
+    but I can keep you stable
+    until better hands can make you whole
+    Phthalocyanine green G
+    is a synthetic, green pigment
+    made from a complex of copper
+    and chlorinated phthalocyanine
+    It’s useful because it’s stable
+    It’s prized for its viridian hue
+    It’s cheap to manufacture
+    ultimately derived from phthalocyanine blue
+    By chlorination in the presence
+    of aluminum trichloride
+    I learned all these things
+    but I’m still color blind
+    And in much the same way,
+    I learned each shade of each
+    of your colors and moods
+    Who the hell knows,
+    who the hell knows,
+    who the hell knows
+    what else I’ve overlooked
+    Try to follow clues I left myself years before
+    cryptic junk drawer artifacts and hazy impressions
+    unsure the last time things felt straightforward
+    now they radiate outward in every direction
+    I try to write something
+    I don’t write much
+    wonder how much I am forgetting
+    how much I have forgot
+    There was something important
+    I was supposed to do
+    something important for someone
+    I don't remember who
+    There was something important
+    I was supposed to do
+    something for someone
+    I don't remember who
+    You and your Joan of Arc haircut
+    you were cutting your way through the crowd
+    weighing choices, hearing voices
+    one cut through, strong and loud
+    I must do this thing, I must go
+    for it is willed that I do so
+    As enemies close in
+    and judges push for false confession
+    keep your chin up and your mouth closed
+    don’t give the bastards any fucking satisfaction
+    Burn and rave
+    rage and fight
+    hold dear to your love
+    hold more dear to your spite
+    I'm nothing to so many
+    it’s no matter; I don’t mind
+    who has the will, who has the time
+    to live in so many other lives
+    So I focused my attention
+    in everything that I do
+    I’m so happy, I'm so proud
+    to be something for you
+    No desire, drive or talent
+    for any kind of fame
+    uncomfortable at the thought
+    of catching any stranger with my name
+    So I focus my attention
+    in everything I do
+    I’m so happy, I'm so proud
+    to be something for you
+    Let your garden grow weeds
+    mix salt in the soil
+    let the walls fall
+    let the crops spoil
+    Abandon all hope
+    abandon all else
+    this world will break your spirit if it finds it,
+    so destroy it first yourself
+    A kingfisher flew out over the lake
+    with a cry of manic laughter
+    we planted seeds in garden beds
+    we burned the earth soon after
+    Abandon all hope
+    abandon all else
+    this world will break your spirit if it finds it
+    so destroy it first yourself
+    What are you saying?
+    Can you say it again?
+    Can you say it slower?
+    I wasn't listening
+    What are you saying?
+    Can you say it again?
+    Can you put it into words I can understand?
+    Who died and made you king?
+    Who cares what you're saying?
+    So much to look at and you said, "Look at me!"
+    So much to listen to and you just had to speak!
+    What are you saying?
+    Can you say it again?
+    Can you say it slower?
+    I wasn't listening
+    Houston, we have an, aw fuck, oh no,
+    can you hear me ground control?
+    Yes we hear you, please go
+    yes we hear you, please go
+    Houston, I’m spinning out in space
+    I have no weight
+    I’m in rough shape
+    Yes we hear you, please go
+    please report, what’s the status quo?
+    The status quo is, and I quote,
+    "All fucked up and about to blow"
+    We hear you, let this one go
+    we hear you please don’t explode
+    The holding pattern has become the flight path
+    the proof of concept's become the plan
+    Please float in space in figure eights
+    until you have control again
+    On my way up a mountain in Jilin province
+    I got an object lesson in providence
+    maybe it was just the lack of oxygen
+    but my head felt light, the sun felt good
+    There’s a lake up here they named after heaven
+    kids stare at the water, laugh at the reflection
+    of the faces of their friends rolling in every direction
+    and I’d laugh too to see you so good
+    As you get closer to the top of the mountain
+    the sun gets warmer
+    the sun gets warmer
+    and the air gets thin
+    There is probability of suffering
+    there is certainty of death
+    come inside, let me look at you,
+    have you eaten yet?
+    Are you longing for reason?
+    Or for reasons I won’t understand?
+    If it’s within reason, If you could stand,
+    could you give me a hand?
+    Help me harvest these tomatoes
+    and their sweet, sour grandeur?
+    I whistle while rolling stones
+    away from the fruits of our labor
+    Are you longing for a reason?
+    Or for reasons I won’t understand?
+    If it stands to reason or not
+    could you stand to give me a hand?
+    I asked about the words scratched in your skin
+    You say "Oh these? I forget about them
+    I was young and bored and it seemed like a thing to do
+    and now the thing to do is done and I have this tattoo"
+    And our bodies pick some things up
+    and let other things go
+    and I’m no longer young
+    but I’m not yet old
+    You ask about the sight loss in one eye
+    I revealed to you in half moonlight
+    When I couldn’t find my way in your strange room
+    the thing I didn’t see coming came as these things often do
+    And our bodies pick some things up
+    and let other things go
+    and I can see you with one good eye
+    and you’re beautiful
+    Wrote lists of flowers that bloom all summer long
+    and things for half-shade gardens
+    things to attract green throated hummingbirds
+    and window-planter onions
+    And it’s been a long year
+    and I’d like to get to where
+    it having been a long year is a good thing
+    For now I’m stuck here
+    and I’d like to get where
+    the things I have to grow are growing
+    Rifled through letters from years ago
+    from people I no longer talk to
+    written to someone I haven’t been for some time now
+    to someone I don't remember
+    And I’ve had some off years
+    and I’d like to get where
+    the days come and I really feel them
+    But for now I’m stuck here
+    a bit lost, with clear
+    detailed plans for an ample garden
+    I’m gonna have a garden
+    I’m gonna grow a garden
+    Summer grips Riverside, California
+    where there’s no respite of ocean breeze
+    too far from the coast in the Inland Empire,
+    where snakes lie in the shade around orange trees
+    And I could say that there’s donkeys in the Box Spring Mountains
+    but I don’t think you’d believe me
+    but it’s not a case for belief or faith
+    last count puts a them at three hundred at least
+    And the news this morning warns it’s been hot
+    and that it will be hot today
+    the radio’s discussing the Mt Rubidoux fire incident
+    and the dismissal of foul play
+    I think about the snakes in the shade
+    and the big cats moving between streams
+    that feed the sun-stained orange groves
+    that repeat and stretch themselves out endlessly
+    I tell you they escaped in the 1900s
+    but I don’t think you believe me
+    but it’s not a case of belief or faith
+    these mountains are full of donkeys, wild and free
+    We pull sweaters on our bodies
+    birds fly in between the trees
+    we trip a bit on the sidewalk bricks
+    whose bright idea were these?
+    And a cold, warm light falls through red and golden leaves
+    in a magic sort of way I can’t articulate with ease
+    What can be said about fall in Massachusetts
+    except that it’s like falling in love
+    any description would be useless
+    who can describe falling in love?
+    Winter’s biting at the edges
+    and the birds are leaving soon
+    but that’s far off yet, for now I get
+    to flirt between red and golden trees with you
+    You hold my hand and smile and
+    it’s cold and warm I get confused
+    you say you’re falling in love with me
+    I say I fall in Massachusetts you
+    Stay the same
+    never change
+    I love you like a sister
+    Have a cool summer
+    watch out for bummers
+    I love you like a sister
+    Stay cool, stay sweet
+    stand on your two feet
+    I love you like a sister
+    You’re my best friend forever
+    I wish we could have gotten
+    to know each other better
+    I love you like a sister
+    I love you like a sister I don’t talk to
+    I love you like a sister I forget about
+    I love you like a sister
+    I love you like a sister
+    Thank you for calling, could you please hold?
+    none of our agents are available
+    due to circumstances beyond our control
+    we seem to be at the end of the world
+    Thank you for calling, could you please hold?
+    Wind whipping through the tall sweet grass
+    waving green against blue
+    I felt only motion
+    I saw only you
+    I saw you and thought of pomegranates
+    of birds in diving flight
+    I felt my pulse
+    I felt alright
+    Which one of these days
+    will they come up with a word to describe you?
+    until then, pomegranates,
+    and a climbing pulse will have to do
+    Until then, pomegranates and diving birds will do
+    Not sure how I got here
+    guess I was just floating on
+    with the flotsam and jetsam
+    don’t remember the wreck I floated from
+    I guess I’ve been numb
+    not sure that that’s better than being aware
+    but I know it hurts less
+    and I know I’ve been scared
+    Now I don’t fear anything
+    I don’t feel anything
+    a ghost ship sailing around unmanned
+    Dead man walking around
+    lost at sea, only found
+    drowning on dry land
+    Not sure how I got here
+    guess I was just floating on and on and on
+    with the flotsam and jetsam
+    I brought along the wreck I floated from
+    It was nice out
+    we kept the windows closed
+    we were under the weather
+    we were indisposed
+    I suppose some air wouldn’t kill us
+    suppose there’s low risk of solar flare
+    but if this is how we feel indoors
+    how the hell are we gonna live out there?
+    where people are happy?
+    where people are happy?
+    where people are happy?
+    where people are happy and just walking around?
+    You fill vases with various seasons
+    bright spring daisies, summer peonies
+    forget-me-nots in the fall
+    In the winter we put most things away
+    in the winter nothing grows but patience
+    impatiently, if at all
+    So we wait and we remember
+    and we hold on to each other
+    and eventually the light lengthens
+    and the world begins to thaw
+    And I found you sitting in the kitchen like an epilogue
+    applying joyful scrutiny to a seed catalogue
+    I brought a pie to a knife fight
+    said "let’s solve this over a bite"
+    at which point you swung at me
+    I bit my tongue
+    you flashed your teeth
+    and I don’t know how this ends except badly
+    And when I called to say let’s bury the hatchet
+    I meant metaphorically, not in my neck
+    forgive me but I keep forgetting
+    that you don’t forgive or forget
+    "You want to shoot me? Go ahead!"
+    is the last thing I said
+    before you leveled your guns at me
+    "aw shoot," I thought
+    seems the same thought caught
+    your head as you clicked off the safety
+    When I called to say let’s bury the hatchet
+    I meant metaphorically, not in my neck
+    forgive me but I keep forgetting
+    that you don’t forgive or forget
+    I could send you a text
+    I could call your phone
+    I could tell you I love you
+    and you’re not alone
+    But even if I want to
+    I know I won’t
+    but you know I love you
+    or maybe you don’t
+    And in the end
+    do I have any friends?
+    or do I have people who don’t mind me?
+    Oh don’t mind me
+    I’m just going through it
+    again and again and endlessly
+    And in the end
+    I don’t think it ends
+    I think it all just repeats
+    And in the end
+    do I have any friends?
+    oh don’t mind me
+    don’t mind me
+    Could you send me a text?
+    could you call my phone?
+    could you tell me you love me
+    and I’m not alone?
+    I mean I know you love me
+    or maybe you don’t
+    maybe we’re all just
+    on our own
+    If absence makes the heart grow fonder
+    you must all be fond of me
+    grief divided is made lighter
+    my grief divides endlessly
+    I feel alright
+    I feel light headed
+    I could call you up
+    but I know enough
+    about where this is headed
+    If absence makes the heart grow fonder
+    you must all be fond of me
+    The coffee's stale, but it’s hot
+    and I’m glad for what I've got
+    try not to think about
+    the things that I don’t have
+    I’ve got someone to love
+    that’s more than I dreamed of
+    I try not think about
+    the people I’ve lost
+    I’ve got a place to sleep
+    some nights I even dream
+    eyelids fluttering
+    bit and piece memories
+    I’ve got someone to love
+    that's more than I dreamed of
+    try not think about
+    the people I’ve lost
+    And it’s all bit and piece
+    and gap and empty
+    I’m glad for what I’ve got
+    for what I’ve had
+    I've got a breadbox full of bills
+    I've got a billfold full of nothing
+    I've got a payday in ten
+    that I've already spent
+    I've got worse things coming
+    And I love you
+    yes, I love you
+    but I need money
+    I've got a breadbox full of bills
+    I've got a billfold full of nothing
+    All my favors cashed in
+    bad best options
+    worse things coming
+    And I love you
+    yes, I love you
+    but I need money
+    I’ve got a devil on one shoulder
+    and an angel on the other
+    got a monkey on my back
+    and they’re all screaming at each other
+    Trying to get my head around
+    how things got so out of hand
+    I’ve got a lump inside my throat
+    I’ve got voices in my head
+    I’ve got voices in my head
+    I’ve got voices in my head
+    Now not to seem too tongue in cheek
+    I’ve got a bad taste in my mouth
+    and it’s been with me all week
+    and I don’t think it’s coming out
+    So I’ll just talk to myself
+    I’ll talk underneath my breath
+    I don’t need to talk at all
+    I’ve got voices in my head
+    I’ve got voices in my head
+    I’ve got voices in my head
+    I had your hand held tight, thumbed your knuckles like rosaries
+    In a garden full of thorns and ferns and worms and rayed-head chicory
+    as my stomach turned to knots of want and whined penitently
+    I’ve got a bad feeling in my gut
+    I’ve got love in my heart
+    I’ve got decades ahead and behind of Hail Marys
+    And you walked a stones throw and looked at me
+    brown eyes, glory, joy, sorrow, mystery
+    A borrowed bike
+    red wine confidence
+    you were a lightning strike
+    of loveliness
+    light bearer
+    white phosphorous
+    on a used Western Flyer
+    all chrome and rust
+    frequent flyer
+    please wait for us
+    joy to joy
+    and dust to dust
+    I’ve got a hometown I don’t live in anymore
+    I’ve got friends that I don’t talk to
+    thinking back I was unthoughtful with my past
+    I don’t think I ever thought to
+    Think about what I had been leaving behind
+    all sharks know is to swim forward or die
+    It’s a miracle you ain’t dead yet
+    I said to myself, to my house plants
+    trying to get survival conditions right
+    breathing back and forth and storing up sunlight
+    mixing the soil with any leaves that were cast aside
+    what will they do with me once I have gone and died?
+    Filled a garden gun with snake shot
+    chased me out of your plot
+    grazed my ear
+    knew you couldn’t kill me
+    May your garden grow high
+    may it blot out the god damn sky
+    may you have good fortune
+    may it bury you
+    And you hurl stones and curses at the hedges
+    when you see me move among them at the edges
+    of your acre
+    well you gotta sleep sometime
+    May your garden grow high
+    may it blot out the god damn sky
+    may you have good fortune
+    may it bury you
+    I was in the backroom making repair kits for broken hearts
+    just a mixtape and a message that reads it’s not your fault
+    you can take it as you need it try not to mix it with alcohol
+    you can operate heavy machinery, take yourself to the mall
+    Lose yourself in a crowd,
+    turn this song up loud:
+    It’s not your fault
+    It’s not your fault
+    It’s not your fault
+    It’s not your fault
+    It’s not your fault
+    It’s not your fault
+    It’s not your fault
+    I was in the backroom making repair kits for broken hearts
+    “The sky is low
+    The clouds are mean”
+    You’re reciting poetry
+    and ignoring me
+    Well 5, 4, 3, 2, 1
+    olly olly oxen free
+    the cows are coming home,
+    won’t you come back to me?
+    “The sky is low
+    The clouds are mean”
+    The cows are coming home,
+    won’t you come back to me?
+    Got a potential spam call from Spokane, Washington
+    where I don’t know anyone
+    wonder if someone sold my number or if it’s
+    more like they just try a bunch
+    Somewhere a machine
+    tries to talk to a machine
+    soft rains falling in Spokane
+    it all repeats
+    Got a potential spam call from Spokane, Washington
+    where I don’t know anyone
+    My apartment
+    is by the highway
+    I can pretend the cars are crashing waves
+    An escarpment
+    over the highway
+    cars eroding the roads like ocean waves
+    A glove compartment
+    a sea of highway
+    pieces of car and cross marker graves
+    Highway department
+    a whale carcass
+    a twisted wreck along the interstate
+    In my apartment
+    I’m underwater
+    I missed my exit, I tried to catch a wave
+    My apartment
+    is by the highway
+    I can pretend the cars are crashing
+    Boarding you looked before you leaped
+    and it shouldn’t bother me
+    hell, it was prudent
+    I asked if you’d jump ship on me
+    you said hell, that’s blasphemy
+    of course you wouldn’t
+    And I should have a little faith
+    you’ve got a case, but negatives
+    can’t be proven
+    And it’s smooth sailing off the coast
+    but ships are built with lifeboats
+    because they might use them
+    I asked if you’d jump ship on me
+    you laughed and looked at the sea
+    The dogs are all barking
+    there’s a pain inside my head
+    the sea is boiling
+    and the sky is turning red
+    add it all up
+    there’s only one thing it can mean
+    you’re out there somewhere
+    and you’re thinking about me
+    and you’re thinking about me
+    Graves burst wide open
+    old wounds begin to bleed
+    and seven trumpets sound
+    the last three just for me
+    Add it all up
+    there’s only one thing it can mean
+    you’re out there somewhere
+    and you’re thinking about me
+    and you’re thinking about me
+    I've been eating bird seed
+    I've been throwing up bird song
+    I've been praying the rosary
+    I've been getting the words wrong:
+    Oh Hail Mary, look at this place
+    the lord has left me
+    Oh glory be, give me a break
+    I don't need glory
+    Open your purse strings
+    I can't eat glory
+    Father almighty give me some money
+    some ugly money
+    I've been eating bird seed
+    I've been throwing up bird song
+    It’s enough that I dressed up
+    what more do you want from me?
+    it’s not like they’ll even know
+    what I’m wearing
+    We put them in the ground
+    we put them in the ground
+    because they’re gone
+    And I know it was sudden
+    it’s coming for all of us
+    they’ll put you in nice clothes
+    and stuff you in a box
+    And put you in the ground
+    put you in the ground
+    put you in the ground
+    and not expect too much
+    I stumbled drunk and racked up damages
+    in the department of Romance languages
+    at my local university
+    I cried, “Tomorrow is cancelled; we’re calling quits."
+    cited lacking interest and a failure
+    to plan sufficiently
+    I walked back home
+    I wrote bad poems
+    I sang sad songs
+    I called your phone
+    can’t remember if you answered
+    Tomorrow came stumbling all the same
+    I forgot my words I went insane
+    with all the things I wish I could unsay
+    I cried “Yesterday is cancelled, please omit
+    from the record its existence;
+    it’s in schedule conflict with today."
+    I stayed home
+    I wrote no poems
+    I sang no songs
+    I lost my phone
+    I heard something ringing
+    Treated a live microphone
+    like it was a confessional
+    you all heard me
+    I was not absolved
+    what did I think
+    that this would solve?
+    I drive my nails
+    into my palms
+    Jesus Christ
+    100 songs?
+    who needs another
+    Book of Psalms
+    what was I thinking?
+    Maybe I’ll make art
+    maybe I’ll make money
+    not from my art– don’t be funny!
+    Maybe I’ll make a mess
+    maybe I’ll make my bed
+    maybe I’ll make choices about the voices in my head
+    like whether or not I’m listening to them
+    Well la la la la la la la la la
+    I can’t hear you
+    well la la la la la la la la la
+    enough’s enough
+    la la la la la la la la la
+    I can’t hear you
+    la la la la la la la la la
+    shut the fuck up
+    Maybe I’ll get big
+    maybe I’ll get known
+    maybe I’ll just go get drunk and stoned
+    Maybe I will crash and burn
+    or worse maybe I will just be cursed
+    to be patiently ignored
+    I asked you what you thought of that
+    you said you’re bored
+    well la la la la la la la la la
+    I’m talking to you
+    well la la la la la la la la la
+    enough's enough
+    la la la la la la la la la
+    I'm talking to you
+    la la la la la la la la la
+    I won’t shut up
+    I can pretend these arms are his
+    I can pretend these legs are hers
+    I can pretend I love you back
+    I can pretend we can make this work
+    I can just live in my head
+    where I can make you anything
+    I can just live in my head
+    and lose my mind
+    I want to break my jaw
+    have it wired shut
+    take a break from
+    talking so much
+    If that's what it takes
+    to shut me up
+    I want to miss a step
+    fall down some stairs
+    catch the edge of a ledge
+    with my c6 vertebrae
+    If that’s what it takes
+    to shut me up
+    Maybe I’ll get better
+    maybe I’ll shut up
+    The bridge wasn’t burned we just let it fall down
+    The bridge wasn’t burned we just let it fall
+    And I will destroy you in time
+    and it will be so easy
+    to let things fall apart
+    it’ll be so easy
+    I’ve been biting my tongue
+    I’ve been swallowing blood
+    moving through a nest of vipers
+    Maybe they’re not just
+    all venom and menace
+    I know about change, stripes, and tigers
+    Don’t make a sound, just get out
+    Keep your head down, just get out
+    Don't make friends, just get out
+    Keep your head down and get out
+    I’ve been moving slow
+    keeping my eyes low
+    In this pit of sleeping tigers
+    Not curious about
+    what would with no doubt
+    Kill me as quick as striking vipers
+    Don’t make a sound, just get out
+    Keep your head down, just get out
+    Don't make friends, just get out
+    Keep your head down and get out
+    And if a lion’s got a thorn in its paw,
+    run away, and hope it’s slow on three legs
+    I built memories of California
+    Out of sunlight, wire and oranges
+    In an apartment complex in Georgia
+    I think the oranges came from Florida
+    And I said:
+    The heat here heats differently
+    The heat here heats differently
+    The heat here heats differently
+    At least that’s how it feels to me
+    You had the oven turned up real high
+    Slices of wonder bread inside
+    What a thing to be doing in July
+    You pointed at one spot and sighed
+    And you said:
+    The heat here heats differently
+    The heat here heats differently
+    The heat here heats differently
+    What are you trying to do to me?
+    a plastic folding table and a paper table cloth
+    maybe I’ll always love you, maybe not
+    The clouds are heavy with weather, but the rain is holding off
+    maybe you’ll always love me, maybe not
+    Half-empty ketchup bottles, coolers full of melting ice
+    maybe you’ll get mean, maybe you’ll stay nice
+    Inflatable pool loungers, a flotation device
+    maybe I’ll get mean, maybe I’ll stay nice
+    Let’s have a cookout
+    Let’s have a cookout
+    Let’s invite everyone
+    Let’s have a cookout
+    Wouldn’t that be fun
+    And I am boxing
+    with my shadow again
+    and I am talking to myself
+    and I am trapped inside my head
+    I’m overthinking
+    the language again
+    waiting on a bell to ring
+    wonder what kind of shape I am in
+    I don’t think it’s good
+    Glass jaw, eight count
+    bleeding nose, foaming mouth
+    a couple blows below the belt
+    knocked down, knocked out
+    And I am talking
+    to my shadow again
+    and I am beating myself up
+    for things I haven’t said
+    I’m overreaching
+    throwing punches again
+    hoping to connect with something
+    and get my balance back
+    It’s not looking good
+    Bleeding nose, foaming mouth
+    glass jaw, eight count
+    knocked down, knocked out
+    caught cold in every bout
+    glass jaw, eight count
+    bleeding nose, foaming mouth
+    caught cold in every bout
+    knocked down knocked out
+    I collected citrus peels and grapevine trimmings
+    I threw them on the sweet-smelling fire
+    I watched the sun kill itself on hillside
+    Saw orange light bleed and flames climb higher
+    Nearly too hot to bear right now,
+    the air will grow cold in a matter of hours
+    I tried my best not to fall in love
+    I was quickly overpowered
+    You smell like heat and cold and flowers
+    and burned up bits of orange
+    A six-pack in a parked car
+    A stick shift for a worn clutch
+    Build up of gasses in my blood
+    Gas pedal with a light-touch
+    Nothing new on the radio
+    good weather on the forecast
+    Just one point in the universe
+    Wonder how long it’s gonna last
+    No traffic at all today
+    Heat expanding the air
+    No traffic at all today
+    I’m not going anywhere
+    I saw you wreathed in white
+    scent of orange on the wind
+    Suddenly I felt
+    my life begin
+    Something borrowed
+    something blue
+    the scent of orange
+    the sight of you
+    Something old
+    something new
+    the start of something overdue
+    The scent of orange
+    The sight of you
+    All of our days
+    coming into view
+    Oh what a horror show
+    you said reading my horoscope
+    Don’t go outside today
+    There’s nothing for you out there anyway
+    Oh how surprising
+    there’s a bad moon rising
+    and it’s affecting the tides
+    Things can pull you from so far away
+    I became entangled in
+    Strange sets of angles
+    That all fell in place today
+    As you read me nonsense in your serious way
+    Things can pull you from far away
+    I read my future in your face
+    Things can pull you from far away
+    We licked the paper back
+    of temporary tattoos
+    I stuck one on ya
+    I stuck it on you
+    It said I love ya
+    It said I love you
+    It said I love ya
+    It said I love you
+    We licked the paper back
+    of temporary tattoos
+    How long will it last
+    I stuck it on you
+    How long will it last
+    It said I love you
+    It said I love ya
+    It said I love you
+    It said I love ya
+    It said I love you
+    The years passed by like days
+    And the days passed by like hours
+    Putting flowers in a vase is
+    A great way to kill flowers
+    Soon as you bloom
+    You start losing all your power
+    I’ve had some tough years these days
+    I’ve worked some awful hours
+    I am not what I thought I’d be
+    I am not what I want to be
+    I don’t got what you want from me
+    I am not what I thought I’d be
+    And at nights I stay awake
+    These days I’m tired, overpowered
+    You can see in my face
+    Every waking hour
+    How’d I get to a place
+    Where I lost all my power
+    I have dreams sometimes
+    That I cannot remember
+    Vulpinic acid kills wolves
+    But not rabbits
+    It’s found in the lichen
+    That grows and inhabits
+    The woods full of wolves
+    With mouths full of rabbits
+    It’s tragic
+    Some people kill deer
+    To have bait for predators
+    The lichen grows poison
+    On live and dead conifers
+    The deer are filled with
+    Glass shards all powdered
+    Placed in the woods
+    To be sharply devoured
+    By wolves
+    Watch what you eat
+    You got blood in your teeth
+    You got glass in your hand
+    And your within reach
+    Of something so quiet so violent
+    And hungry for meat
+    Some things grows slower
+    Than the slow growing forest
+    Their role unapparent but something elaborate
+    And they’ll outlive us all, send some to death howling
+    Or just blow away and become their surroundings
+    In time
+    You were bailing out water from the ocean
+    Where you gonna put it? Where you gonna put it?
+    Supercalifragilisticexpeali-oh shit
+    What are you doing? What are you doing?
+    What kind of magic are you in tune with?
+    To part water or to walk its surface?
+    Will you stop the flood or drown me with it?
+    What kind of magic are you in tune with?
+    Do you breathe air? Is there blood in your spit?
+    Do you drink wine? Is there blood in your spit?
+    Do you drink water? Is their blood in your spit?
+    Do you breathe air? Is there blood in your spit?
+    I was swallowed by a whale
+    Said “I think I can do more good from the inside”
+    But I can’t make heads or tails of this fluke
+    And mouth, that swallowed me wholly
+    And whales don’t think about
+    The things that they’re eating
+    Machines don’t think about
+    Well they don’t think of anything
+    And god don’t think about
+    The static of prayer and pleading
+    I’ve been swallowed by a whale
+    I’m devoting myself to its machinery
+    And hunger is old
+    And the ocean is older than hunger or feeling
+    And there’s a taste of salt
+    In all the swallowing mouths feeding and screaming
+    God sent the flood
+    I didn’t notice
+    God sent the flood
+    The whale didn’t notice
+    God sent the flood
+    The machines didn’t notice
+    God sent the flood
+    I didn’t notice
+    I’m drunk in the aquarium again
+    Shark-grinning at the fish and scaring them
+    I won’t tap on the glass
+    You’re not supposed to do that
+    When I die throw my body in the sea
+    Let it skeletonize and become a reef
+    Let some other things
+    Live their lives inside me
+    I wasn’t a great person
+    Maybe I’ll be a better anemone
+    Objects in motion, the tides of the ocean
+    The pull of stars, mirrors behind bars
+    All frame a fearful symmetry
+    Last night I dreamed a tiger was eating me
+    I got out by the skin of my teeth
+    I got out with my skin on his teeth
+    I got out by the skin of my teeth
+    Don’t forget to floss
+    I lost the plot
+    One more drink is enough I think
+    But enough's not enough when the going gets rough
+    Got a rough idea of the bad shape I’m in
+    Gonna drive off a pier into the ocean
+    And drive and drink what’s pouring in
+    Last night I dreamt I was being eaten
+    Last night I dreamt I was eating a lamb
+    Don’t forget to floss
+    I lost the plot
+    We hurt ourselves less when we’re together
+    We hurt each other more
+    We don’t find any moral imperatives
+    imperative anymore
+    We do things
+    Contrary to reason
+    Contrary to good sense
+    To what’s kind or decent
+    We do things
+    That aren’t kind or decent
+    Contrary to goodness
+    Contrary to reason
+    Treating a sickness for life with bedrest
+    We wake late in the day
+    We hold on to each other a while
+    And then we break away
+    We do things
+    And we don’t mean them
+    Come on now
+    One more time without feeling
+    We do things
+    That aren’t kind or decent
+    Contrary to goodness
+    Contrary to reason
+    I’m going to do better than my best
+    110%
+    Kill for or steal the rest
+    110%
+    Good enough is fine but best is best
+    110%
+    No breaks no sleep no rest
+    110%
+    Give less when I am dead
+    110%
+    Can’t you do better than your best
+    110%
+    We need you to do better than your best
+    110%
+    No breaks no sleep no rest
+    110%
+    The body is weak and only flesh
+    110%
+    Fight through with your spirit
+    110%
+    Give up your soul and keep the rest
+    110%
+    I’m going to do better than my best
+    110%
+    We need more than your limit
+    110%
+    It’s a company value
+    We work hard, we play harder
+    Sharks that stop die in the water
+    Come on push it faster, farther
+    Daft Punk this shit through next quarter
+    Can you make an early meeting/evening?
+    Don’t forget tonight we’re drinking
+    Something fun– but client facing!
+    Be yourself (But don’t go crazy)
+    Can you come in weekends and evenings?
+    We’ll make it fun (within reason)
+    Take a break but stay in reach
+    You can’t miss calls because of sleep
+    We own your sweat
+    Your time is ours
+    Who do you fucking think you are?
+    We own your blood
+    Your time is ours
+    Who do you fucking think you are?
+    We own your life
+    your time is ours
+    Who do you fucking think you are?
+    We work hard, we play hard!
+    Hey there, thanks for reaching out!
+    Can you tell me what this is all about?
+    About what you want and what you need?
+    Not that I can do much of anything
+    I’m just here to listen
+    Sometimes to respond
+    Most times I simply
+    Pass the message on
+    They gave me documents
+    And a telephone
+    A lot of buttons and
+    A microphone
+    I have no idea
+    What any of this means
+    I asked my boss, he said, ‘Don’t ask me.’
+    I’m just here to listen
+    Sometimes to respond
+    Most times I just pass
+    The message on
+    I hope this helps!
+    I hope this helps!
+    I hope it all just resolves itself!
+    Hey there, thanks for reaching out!
+    Can you tell me what this is all about?
+    About what you want and what you need?
+    Not that I can do much of anything
+    The spotted lantern fly is an invasive species
+    Invading all the trees of Pennsylvania and New Jersey
+    The spotted lantern fly doesn’t have any enemies
+    Except for praying mantises, a cure worse than the disease
+    Have you seen an insect eat another insect?
+    Have you seen a man kill another man?
+    Oh, I saw both on tv last night
+    I saw both in the street last night
+    They put my street on tv last night
+    I saw both on tv last night
+    Nightly news top stories
+    Nature documentaries
+    All bad news for all concerned
+    I’ve got work in the morning
+    I was 16
+    I bought a lighter
+    I wasn’t yet smoking
+    I just liked having fire and knowing
+    if things went bad I could make them worse
+    Limited potential
+    Affordable fuel source
+    Do you have a light?
+    Yes I have a light
+    Do you have a light?
+    Yes I have a light
+    I was 16
+    I started smoking
+    I had the lighter
+    A baseball bat
+    and some tennis balls
+    some gasoline
+    a plastic Bic lighter
+    A dry fire season
+    A dry fire season getting drier
+    I’m making shooting stars
+    out of tennis balls
+    and a little fire
+    I watch them flash and soar
+    Not sure what to wish for
+    Maybe to feel lighter
+    I’m making shooting stars
+    out of tennis balls
+    and a little fire
+    I watch them flash and soar
+    Not sure what to wish for
+    I just feel tired
+    I got a headache that a beheaded saint would say,
+    ‘Hey this seems a little much’
+    ‘This seems like too much’
+    Starting to think I wasn’t built for this place
+    I’m only renting these days, what can I say but:
+    God bless this mess
+    As I chase my bliss
+    As I chase my dog
+    All over the place
+    As I miss my bus
+    As I fall on my face
+    As I chip my tooth
+    As I fall from grace
+    As I whistle and wheeze
+    Through a cracked set of teeth
+    And wonder what floss ever got me?
+    As my brain starts to pound
+    And I hear the sound
+    Of some god or dog barking
+    I got a headache that a beheaded saint would say,
+    ‘Hey this seems a little much'
+    'This seems like too much’
+    Starting to think I wasn’t built for this place
+    I might make like a saint
+    I might just head off
+    I’ve been talking in my dreams
+    I’ve been walking in my sleep
+    I’ve been frightened by falling in my dreams
+    I’ve had nights when I’ve had trouble falling asleep
+    I’ve been walking in my dreams
+    I’ve been talking in my sleep
+    I’ve been talking about my dreams
+    I’ve been falling in and out of sleep
+    I’ve been dreaming of you and no one else
+    I’ve been talking to you to myself
+    I’ve been dreaming of no ones else but you
+    I’ve been talking to myself to you
+    I’ve been talking in my dreams
+    I’ve been walking in my sleep
+    Hang in there baby
+    It’s only morning
+    It’s only Monday
+    It’s just one more thing
+    Or I guess maybe
+    It’s one more, more thing
+    How many more things
+    Till I go crazy?
+    Till I go
+    Which of these mornings
+    Will I go?
+    Come on now baby
+    It’s barely evening
+    It’s still early
+    You can’t be sleeping
+    I mean surely
+    You must be keeping
+    Dreams of something
+    Worth staying sleeping
+    Worth staying awake
+    Worth staying
+    Hang in there baby
+    It’s only morning
+    I used to sit alone
+    I used to eat alone
+    I used to sleep alone
+    I used to be alone
+    You used to sit alone
+    You used to eat alone
+    You used to sleep alone
+    You used to be alone
+    We used to
+    We used to
+    We used to
+    We used to
+    I love you
+    We Used to
+    I love you
+    We used to
+    Hey friend it’s been, what?
+    A couple of years?
+    What’s a couple of years between friends?
+    What’s a couple hundred things left unsaid?
+    What’s a couple grand ill spent?
+    I am a bad investment
+    I’m begging you to make again
+    I am a bad investment
+    I’m begging you to make again
+    You won’t be sorry
+    I won’t say sorry
+    You won’t be sorry
+    I won’t say sorry now
+    Fool you once
+    Shame on me
+    Fool you twice
+    Shame on me
+    Fool you again and again
+    You’re a good mark
+    You’re my best friend
+    I’m sorry
+    Like a bird in an airport
+    Like a fly in a window pane
+    I am stuck in the open
+    No use for wings in a cage
+    I am grounded, surrounded
+    So close yet so far away
+    From some kind of escape
+    It’d be funny
+    If it wasn’t so funny
+    It’d be funny
+    If it wasn’t so sad
+    Oh I’d be laughing
+    If I wasn’t laughing
+    Sometimes I laugh
+    So hard I cry
+    And the one horse this town’s got
+    Must have up and died
+    Because this bar is so empty
+    That it feels smaller outside
+    And when you have no money
+    And you have no ride
+    The expanse of everything
+    Is just one less place to hide
+    And you don’t have to go home
+    But you can’t stay here
+    Why don’t you fly in a circle
+    Pretend you went somewhere
+    It’d be funny
+    If it wasn’t so funny
+    It’d be funny
+    If it wasn’t so sad
+    Oh I’d be laughing
+    If I wasn’t laughing
+    Sometimes I laugh
+    So hard I cry
+    I’m a social drinker
+    I am anti-social
+    It’s been sobering to admit
+    I am dumb, I am drunk, I am lonely
+    You could be dumb, drunk and lonely with me
+    When I was young I flunked social studies
+    I was drunk most school nights with my friends
+    I was dumb, I was drunk, I was lonely
+    They were dumb, drunk and lonely with me
+    I got older and I repeated history
+    I didn’t learn anything
+    I am a social climber
+    A drinker and driver
+    Can I give you a ride?
+    Climb you like a ladder rung?
+    Would it be bad or better if I had simply never said this out loud to anyone?
+    I am dumb, I am drunk, I am lonely
+    You could be dumb, drunk and lonely with me
+    We stripped the walls of copper wiring
+    Mined our days for silver linings
+    We are hungry engines low on fuel
+    We’re pretending the tank is full
+    We’ve got miles and miles to go
+    We unburdened heirlooms of their gemstones
+    Traded sentiment for quick loans
+    W are diamonds in the rough
+    Out of our minds and deep in love
+    We’ve got miles and miles to mine
+    And we’ve got money and we’ve got what we need it for
+    And when we run out we’ll just have to find some more
+    And we have each other
+    In sickness and in health
+    For richer and for poorer
+    For better or else
+    You’re a point in the darkness
+    You’re the curved road at night
+    You’re the distracted driver
+    You’re the deer in headlights
+    Oh dear, oh god,
+    You’ve come so far
+    For someone so lost
+    And here you are
+    All fear and car
+    Combustion and exhaust
+    Won’t you slow down?
+    Won’t you stop?
+    You won’t slow down
+    You won’t stop
+    You’re the distracted driver
+    You’re the deer in headlights
+    You’re a point in the darkness
+    You’re the darkness at night
+    If hell is other people then
+    It must be lonely in heaven
+    I’m other people to my friends
+    I hope I don’t bother them
+    I’m making hell out of heaven
+    I’m making hell out of heaven
+    And oh hell, I meant well
+    But you know what they say
+    About this road and intentions
+    And how it has been paved
+    I’m driving 100 miles an hour
+    Down lonely interstate
+    I could pull over and call you
+    But what the hell would I say?
+    What the hell could I say?
+    I’m making hell out of heaven
+    I’m making hell out of heaven
+    Tell the rearview and the radio to speak among themselves
+    Hell is other people and I have become someone else
+    Hey friend I’ve been calling
+    Leaving messages till your voicemail's full
+    Hey friend I’ve been knocking
+    On your door until my fist is raw
+    Come out, come out, wherever you are
+    I’ve got the place surrounded
+    I see light underneath your door
+    Don’t you know we love you?
+    Don’t you want to be loved?
+    Come on come outside
+    What are you afraid of?
+    Hey friend I’ve been calling
+    Hey friend I’ve been knocking
+    Hey friend I’ve been calling
+    Hey friend I’ve been knocking
+    I can hear your phone ring
+    I can see light underneath your door
+    Ok I’ll stop calling
+    I won’t come around anymore
+    My head's a nice place to visit but I wouldn’t want to live there
+    You’ve got a cheap brush, you have nice hair
+    I’ve been out of my head, I’ve been nowhere
+    I bought a nice brush, I have bad hair
+    Should I give some thought to all this overthinking?
+    Do you get caught between these fits of feeling?
+    Is it a problem of push or pull or the conditioner I’m using?
+    Maybe it’s in my head
+    It gets a bit confusing
+    I think I understand
+    I might be overthinking
+    Stephanie, you have nice hair
+    Stephanie, you have nice hair
+    Stephanie, you have nice hair
+    Stephanie, your hair looks nice
+    Drunk on a plane again
+    Enjoying a break in the turbulence
+    Duty-free whiskey in my hands
+    Duty-free days ahead
+    I’m going to need a vacation from my vacation
+    I’m going to need a drink for this drink
+    What do you think?
+    Isn’t flying marvelous?
+    Breathing the same air again and again?
+    Isn’t flying marvelous?
+    What’s a little turbulence?
+    After all it’s not the flight or fall that kills you
+    It’s all in how you land
+    I’m going to need a vacation from my vacation
+    I’m going to need a drink for this drink
+    You think maybe I’ve had enough
+    Here’s what I think of what you think:
+    There are emergency exits
+    At the front and rear of craft
+    And I invite you to use either
+    If you’re gonna be like that
+    So you’re some hot shot pilot?
+    I’m the king of the air
+    I’ve got nowhere to be
+    I can go anywhere
+    I gave you a ride to the airport
+    The sun got caught in your hair
+    The light bounced off your sister’s silver bracelets
+    I thought about you up in the air
+    I kept checking the time
+    I was nervous
+    I didn’t want you to miss your flight
+    Your hair really is gorgeous
+    I didn’t want you to leave me
+    behind on the earth’s surface
+    With you gone I’m a big dumb planet
+    In such an empty universe
+    We drove past arrivals
+    I was nervous
+    Light was bouncing off your silver bracelets
+    The rearview mirror’s just a piece of my own face
+    Looking at my own face
+    I kept checking the time
+    I was nervous
+    I didn’t want you to miss your flight
+    Your hair really is gorgeous
+    I didn’t want you to leave me
+    behind on the earth’s surface
+    With you gone I’m a big dumb planet
+    In such an empty universe
+    I kept checking the time
+    I was nervous
+    This day has been one long month
+    It’s been like that all year
+    Last night I got so drunk
+    That all my sobering thoughts disappeared
+    And I had a moment of clarity
+    And I tried to build a home in that moment
+    If I could just get infinity
+    In a whiskey glass, I could hold it
+    But I felt the hands of the clock move
+    I felt emptiness in my glass
+    I heard my blood buzz in my ears
+    I resigned myself to the math
+    That says zero’s an awfully big number
+    That nothing’s coming for us all
+    And it’s bad luck to toast with what’s empty
+    But it’s all I have after last call
+    Here’s to you
+    Here’s to me
+    Here’s to the nothing chewing its own teeth
+    Here’s to you
+    Here’s to me
+    On and on, etc.
+    Have to make do with what can be found
+    All the same, the theory is sound
+    You can taste the salt the air brings
+    Sun warm on my face and my new wings
+    More wax
+    More feathers
+    You can’t keep me here forever
+    If I should plummet into the sea
+    And cling for life on my own debris
+    Wash up tangled on the shore
+    I’m only going to try some more
+    More wax
+    More feathers
+    You can’t keep me here forever
+    Thirst at your heels in the morning
+    Hunger at your throat by night
+    Go on get lost hunting monsters
+    That’s the way the trap’s designed
+    You can kill the thing you think is at its heart
+    Still fail to make it out alive
+    Have you been here before?
+    Would it even help to know?
+    Falling looks like flying
+    When you see it from below
+    Obsessed with finding the one thing
+    You could strangle while it sleeps
+    And your life could finally start
+    The moment it no longer breathes
+    Just make sure with each turn you don’t lose yourself
+    Trying to find some inner peace
+    Have you been here before?
+    Would it even help to know?
+    Falling looks like flying
+    When you see it from below
+    From the moment I saw you
+    I loved you
+    I loved you
+    If we could be wed
+    Or wrapped up in thread
+    I’d love to be a part of you
+    I’d face or betray
+    Kingdoms and fathers
+    Brothers and monsters
+    And I’d sail away
+    From a place I called home
+    If I could call you my own
+    So please don’t betray me
+    Sail away from me
+    Leave me alone
+    From the moment I saw you
+    I loved you
+    I loved you
+    I’ve been away
+    I’ve been through a lot, I forgot
+    To switch out my black sails
+    I didn’t mean to bring this home
+    I’ve been fighting monsters
+    I have been a monster
+    I didn’t mean to bring this home
+    Saw you up on a cliff
+    My heart jumped joyfully
+    You saw my ship coming in
+    You jumped into the sea
+    Black sails
+    Air gets heavy this far underground
+    It heightens taste and dampens sound
+    I can smell the iron my food bleeds
+    I will devour what dares hunt me
+    More paths
+    Than you can measure
+    I sit waiting at the center
+    Holding a memory of faded green
+    I pray, for what they’ve done to me:
+    May all sons lose their fathers
+    May all fathers lose their sons
+    Especially me
+    And my father
+    I sit ready in the darkness
+</div>
+<script src="sketch.js"></script>
+</body>
+</html> 
